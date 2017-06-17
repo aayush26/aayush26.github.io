@@ -1,3 +1,18 @@
 title: Aayush's Site
 
 theme: jekyll-theme-cayman
+
+# Includes an icon in the footer for each username you enter
+footer-links:
+  email: aayushsingh.mail@gmail.com
+  facebook:
+  flickr:
+  github: aayush26
+  instagram:
+  linkedin: aayushkumarsingha
+  pinterest:
+  rss: # just type anything here for a working RSS icon
+  twitter: 
+  stackoverflow: users/5100213/aayush-kumar-singha
+  youtube: # channel/<your_long_string> or user/<user-name>
+  googleplus: # anything in your profile username that comes after plus.google.com/
