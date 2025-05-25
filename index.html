@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fafafa;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header */
+        .header {
+            padding: 2rem 2rem 1rem;
+            text-align: center;
+            border-bottom: 1px solid #e5e5e5;
+        }
+
+        .header h1 {
+            font-size: 1.8rem;
+            font-weight: 300;
+            color: #222;
+        }
+
+        .header p {
+            color: #666;
+            font-size: 0.95rem;
+            margin-top: 0.5rem;
+        }
+
+        /* Navigation Tabs */
+        .nav-tabs {
+            display: flex;
+            justify-content: center;
+            padding: 0 2rem;
+            margin-top: 1.5rem;
+            gap: 0.5rem;
+        }
+
+        .tab-button {
+            background: none;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            cursor: pointer;
+            font-size: 0.9rem;
+            color: #666;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+            font-family: inherit;
+        }
+
+        .tab-button:hover {
+            background: #f0f0f0;
+            color: #333;
+        }
+
+        .tab-button.active {
+            background: #333;
+            color: white;
+        }
+
+        /* Content Area */
+        .content-area {
+            flex: 1;
+            padding: 2rem;
+            overflow-y: auto;
+        }
+
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* About Section */
+        .about-content {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+            line-height: 1.8;
+        }
+
+        .about-content p {
+            margin-bottom: 1.5rem;
+            color: #555;
+        }
+
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.75rem;
+            margin-top: 2rem;
+        }
+
+        .skill-tag {
+            background: #f0f0f0;
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: #555;
+        }
+
+        /* Blog Section */
+        .blog-list {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .blog-item {
+            padding: 1.5rem 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .blog-item:last-child {
+            border-bottom: none;
+        }
+
+        .blog-title {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+
+        .blog-meta {
+            font-size: 0.85rem;
+            color: #999;
+            margin-bottom: 0.75rem;
+        }
+
+        .blog-description {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Papers Section */
+        .papers-list {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .paper-item {
+            padding: 1.5rem 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .paper-item:last-child {
+            border-bottom: none;
+        }
+
+        .paper-title {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+
+        .paper-authors {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 0.5rem;
+        }
+
+        .paper-venue {
+            font-size: 0.85rem;
+            color: #999;
+            margin-bottom: 0.75rem;
+            font-style: italic;
+        }
+
+        .paper-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .paper-link {
+            font-size: 0.85rem;
+            color: #007acc;
+            text-decoration: none;
+            padding: 0.25rem 0.5rem;
+            border: 1px solid #007acc;
+            border-radius: 4px;
+            transition: all 0.2s ease;
+        }
+
+        .paper-link:hover {
+            background: #007acc;
+            color: white;
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .project-card {
+            background: white;
+            border: 1px solid #e5e5e5;
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: all 0.2s ease;
+        }
+
+        .project-card:hover {
+            border-color: #ccc;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .project-title {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #333;
+            margin-bottom: 0.75rem;
+        }
+
+        .project-description {
+            color: #666;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tech-tag {
+            background: #f8f8f8;
+            color: #666;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+        }
+
+        /* Contact Section */
+        .contact-content {
+            max-width: 500px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .contact-link {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            color: #666;
+            transition: color 0.2s ease;
+        }
+
+        .contact-link:hover {
+            color: #333;
+        }
+
+        .contact-icon {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-label {
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                height: 100vh;
+            }
+
+            .header {
+                padding: 1.5rem 1rem 1rem;
+            }
+
+            .nav-tabs {
+                padding: 0 1rem;
+                flex-wrap: wrap;
+            }
+
+            .tab-button {
+                padding: 0.6rem 1rem;
+                font-size: 0.85rem;
+            }
+
+            .content-area {
+                padding: 1.5rem 1rem;
+            }
+
+            .contact-links {
+                gap: 1.5rem;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>Your Name</h1>
+            <p>Web Developer & Researcher</p>
+            
+            <!-- Navigation Tabs -->
+            <div class="nav-tabs">
+                <button class="tab-button active" data-tab="about">About</button>
+                <button class="tab-button" data-tab="blog">Blog</button>
+                <button class="tab-button" data-tab="papers">Papers</button>
+                <button class="tab-button" data-tab="projects">Projects</button>
+                <button class="tab-button" data-tab="contact">Contact</button>
+            </div>
+        </div>
+
+        <!-- Content Area -->
+        <div class="content-area">
+            <!-- About Tab -->
+            <div id="about" class="tab-content active">
+                <div class="about-content">
+                    <p>Hello! I'm a passionate web developer and researcher interested in building beautiful, functional applications and exploring new technologies.</p>
+                    
+                    <p>I enjoy creating clean, minimal designs and writing about my experiences with various technologies. My work spans from web development to research papers on emerging tech trends.</p>
+                    
+                    <p>When I'm not coding or writing, you can find me exploring new frameworks, contributing to open source projects, or sharing knowledge through blog posts and research publications.</p>
+                    
+                    <div class="skills-list">
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">React</span>
+                        <span class="skill-tag">Node.js</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">UI/UX Design</span>
+                        <span class="skill-tag">Technical Writing</span>
+                        <span class="skill-tag">Research</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Blog Tab -->
+            <div id="blog" class="tab-content">
+                <div class="blog-list">
+                    <article class="blog-item">
+                        <h3 class="blog-title">Modern Web Development Best Practices</h3>
+                        <div class="blog-meta">Posted on May 20, 2025 • 8 min read</div>
+                        <p class="blog-description">An exploration of current best practices in web development, covering performance optimization, accessibility, and modern JavaScript frameworks.</p>
+                    </article>
+
+                    <article class="blog-item">
+                        <h3 class="blog-title">The Art of Minimal Design</h3>
+                        <div class="blog-meta">Posted on May 15, 2025 • 5 min read</div>
+                        <p class="blog-description">Why less is more in web design and how to create beautiful, functional interfaces with minimal elements.</p>
+                    </article>
+
+                    <article class="blog-item">
+                        <h3 class="blog-title">Understanding React Hooks</h3>
+                        <div class="blog-meta">Posted on May 10, 2025 • 12 min read</div>
+                        <p class="blog-description">A comprehensive guide to React Hooks, from basic useState to custom hooks, with practical examples and best practices.</p>
+                    </article>
+
+                    <article class="blog-item">
+                        <h3 class="blog-title">Building Responsive Web Applications</h3>
+                        <div class="blog-meta">Posted on May 5, 2025 • 10 min read</div>
+                        <p class="blog-description">Techniques and strategies for creating web applications that work seamlessly across all devices and screen sizes.</p>
+                    </article>
+                </div>
+            </div>
+
+            <!-- Papers Tab -->
+            <div id="papers" class="tab-content">
+                <div class="papers-list">
+                    <article class="paper-item">
+                        <h3 class="paper-title">Performance Optimization in Modern Web Applications</h3>
+                        <div class="paper-authors">Your Name, Co-Author Name</div>
+                        <div class="paper-venue">International Conference on Web Technologies, 2025</div>
+                        <div class="paper-links">
+                            <a href="#" class="paper-link">PDF</a>
+                            <a href="#" class="paper-link">arXiv</a>
+                            <a href="#" class="paper-link">Code</a>
+                        </div>
+                    </article>
+
+                    <article class="paper-item">
+                        <h3 class="paper-title">User Interface Design Patterns for Enhanced Accessibility</h3>
+                        <div class="paper-authors">Your Name, Research Partner</div>
+                        <div class="paper-venue">Journal of Human-Computer Interaction, 2024</div>
+                        <div class="paper-links">
+                            <a href="#" class="paper-link">PDF</a>
+                            <a href="#" class="paper-link">DOI</a>
+                        </div>
+                    </article>
+
+                    <article class="paper-item">
+                        <h3 class="paper-title">Machine Learning Applications in Web Development</h3>
+                        <div class="paper-authors">Your Name, et al.</div>
+                        <div class="paper-venue">Workshop on AI and Web Technologies, 2024</div>
+                        <div class="paper-links">
+                            <a href="#" class="paper-link">PDF</a>
+                            <a href="#" class="paper-link">Slides</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+            <!-- Projects Tab -->
+            <div id="projects" class="tab-content">
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <h3 class="project-title">Portfolio Website Template</h3>
+                        <p class="project-description">A minimal, responsive portfolio template built with vanilla HTML, CSS, and JavaScript. Features tab-based navigation and clean design.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <h3 class="project-title">Task Management App</h3>
+                        <p class="project-description">A React-based task management application with drag-and-drop functionality and local storage persistence.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">TypeScript</span>
+                            <span class="tech-tag">CSS Grid</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <h3 class="project-title">API Documentation Generator</h3>
+                        <p class="project-description">An automated tool for generating clean, interactive API documentation from OpenAPI specifications.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">Express</span>
+                            <span class="tech-tag">Swagger</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <h3 class="project-title">Data Visualization Dashboard</h3>
+                        <p class="project-description">Interactive dashboard for visualizing complex datasets with multiple chart types and filtering options.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">D3.js</span>
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Python</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Tab -->
+            <div id="contact" class="tab-content">
+                <div class="contact-content">
+                    <p>Feel free to reach out if you'd like to collaborate, discuss research, or just say hello.</p>
+                    
+                    <div class="contact-links">
+                        <a href="mailto:your.email@example.com" class="contact-link">
+                            <div class="contact-icon">📧</div>
+                            <div class="contact-label">Email</div>
+                        </a>
+                        <a href="#" class="contact-link">
+                            <div class="contact-icon">💼</div>
+                            <div class="contact-label">LinkedIn</div>
+                        </a>
+                        <a href="#" class="contact-link">
+                            <div class="contact-icon">🐙</div>
+                            <div class="contact-label">GitHub</div>
+                        </a>
+                        <a href="#" class="contact-link">
+                            <div class="contact-label">🐦</div>
+                            <div class="contact-label">Twitter</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Tab functionality
+        const tabButtons = document.querySelectorAll('.tab-button');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        tabButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const targetTab = button.getAttribute('data-tab');
+
+                // Remove active class from all buttons and contents
+                tabButtons.forEach(btn => btn.classList.remove('active'));
+                tabContents.forEach(content => content.classList.remove('active'));
+
+                // Add active class to clicked button and corresponding content
+                button.classList.add('active');
+                document.getElementById(targetTab).classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
