@@ -1,0 +1,23 @@
+[
+  {
+    "slug": "modern-web-development",
+    "title": "Modern Web Development Best Practices",
+    "date": "2025-05-20",
+    "readTime": "8 min read",
+    "description": "An exploration of current best practices in web development, covering performance optimization, accessibility, and modern JavaScript frameworks."
+  },
+  {
+    "slug": "minimal-design",
+    "title": "The Art of Minimal Design",
+    "date": "2025-05-15",
+    "readTime": "5 min read",
+    "description": "Why less is more in web design and how to create beautiful, functional interfaces with minimal elements."
+  },
+  {
+    "slug": "react-hooks-guide",
+    "title": "Understanding React Hooks",
+    "date": "2025-05-10",
+    "readTime": "12 min read",
+    "description": "A comprehensive guide to React Hooks, from basic useState to custom hooks, with practical examples and best practices."
+  }
+]
