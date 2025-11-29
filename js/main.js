@@ -24,9 +24,8 @@ class Portfolio {
         // Handle blog post clicks
         document.addEventListener('click', (e) => {
             if (e.target.classList.contains('blog-read-more')) {
-                e.preventDefault();
                 const slug = e.target.getAttribute('data-slug');
-                this.loadBlogPost(slug);
+                window.location.href = `blog/${slug}.html`;
             }
             
             if (e.target.classList.contains('back-to-blog')) {

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home Theatre Cost Calculator & Guide</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="./_interior-tools.css">
+  <style>
+    body { padding: 1rem; }
+    .htc-blog-header { margin-bottom: 2rem; text-align: center; }
+    .htc-blog-header h1 { font-size: 2rem; margin-bottom: 0.5rem; }
+    .htc-blog-header p { font-size: 1.1rem; color: #666; }
+    body.htc-dark .htc-blog-header p { color: #ccc; }
+  </style>
+</head>
+<body class="htc-dark">
+
+  <!-- Navigation -->
+  <nav class="blog-nav">
+    <a href="../../index.html" class="nav-home">← Home</a>
+  </nav>
+
+  <!-- Blog Header -->
+  <header class="htc-blog-header">
+    <h1>🎬 Home Theatre — The Ultimate Guide</h1>
+    <p>Plan your room. Pick your components. Get the most optimised setup for your budget.</p>
+  </header>
+
+  <!-- Deep Dive Guide -->
+  <div id="htc-guide"></div>
+
+  <!-- Cost Calculator -->
+  <div id="htc-root"></div>
+
+  <!-- JS -->
+  <script src="./_interior-tools.js"></script>
+  <script>
+    // Initialize the calculator + deep dive guide
+    InteriorTools.init({
+      containerId: 'htc-root',
+      mostOptimized: true,
+      defaultTheme: 'dark'
+    });
+  </script>
+</body>
+</html>
