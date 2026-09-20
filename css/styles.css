@@ -35,6 +35,8 @@ time, .link-list span, .archive-list > li > span { color: var(--muted); font-siz
 .archive-links span { font-size: 1.14rem; }
 .archive-links small { color: var(--muted); font-size: .93rem; }
 .archive-links b { color: var(--accent); font-family: ui-monospace, monospace; font-weight: 400; }
+.closing-line { color: var(--muted); font-size: 1.05rem; margin: -1.8rem 0 4.5rem; }
+.closing-line span { color: var(--ink); font-style: italic; }
 .site-footer { border-top: 1px solid var(--line); color: var(--muted); display: flex; font-family: ui-monospace, monospace; font-size: .7rem; justify-content: space-between; padding: 1.4rem 0 2.5rem; }
 .site-footer p { margin: 0; }
 .site-footer a { color: inherit; text-underline-offset: 4px; }
