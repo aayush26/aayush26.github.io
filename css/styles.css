@@ -76,10 +76,6 @@ code { background: #e7e5dc; font-size: .68em; padding: .15rem .3rem; }
 .detail-list h2 { font-size: clamp(1.55rem, 3vw, 2.2rem); margin-bottom: .7rem; }
 .detail-list article > p:last-child { color: var(--muted); max-width: 620px; }
 .page-list { margin-top: 0; }
-.page-callout { border-left: 3px solid var(--moss); margin-top: 4rem; max-width: 620px; padding: .5rem 0 .5rem 1.25rem; }
-.page-callout h2 { font-size: 1.65rem; margin-bottom: .7rem; }
-.page-callout p:last-child { color: var(--muted); margin-bottom: 0; }
-.page-callout a { color: var(--moss); text-underline-offset: 3px; }
 .about-page { max-width: 960px; }
 .about-page .about-copy { margin-left: auto; }
 @media (max-width: 720px) {

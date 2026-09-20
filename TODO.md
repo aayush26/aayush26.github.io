@@ -1,4 +1,4 @@
-# Website Garden Goals
+# Website Garden TODOs
 
 This is a small, sustainable publishing rhythm—not a content quota. The goal is to leave behind a useful record of curiosity and work.
 
