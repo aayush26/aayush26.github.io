@@ -3,46 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thokchom</title>
+    <meta name="description" content="Aayush's public notebook for software, systems, spaces, sound, and small details.">
+    <title>Aayush — systems, spaces & sound</title>
     <link rel="stylesheet" href="css/styles.css">
-    <!-- Fallback favicon (for older browsers) -->
     <link rel="icon" href="favicon.ico" type="image/x-icon">
-    
-    <!-- Standard favicons -->
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16x16.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png">
-    
-    <!-- Apple Touch Icon (iOS home screen) -->
-    <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
-    
-    <!-- Android icons -->
-    <link rel="icon" type="image/png" sizes="192x192" href="assets/icons/android-chrome-192x192.png">
-    <link rel="icon" type="image/png" sizes="512x512" href="assets/icons/android-chrome-512x512.png">
 </head>
 <body>
-    <div class="container">
-        <!-- Header -->
-        <div class="header">
-            <h1>I am Aayush</h1>
-            <p>Software Engineer & AI Enthusiast</p>
-            
-            <!-- Navigation Tabs -->
-            <div class="nav-tabs">
-                <button class="tab-button active" data-tab="about">About</button>
-                <button class="tab-button" data-tab="blog">Blog</button>
-                <button class="tab-button" data-tab="papers">Papers</button>
-                <button class="tab-button" data-tab="projects">Projects</button>
-                <button class="tab-button" data-tab="contact">Contact</button>
+    <header class="site-header">
+        <a class="wordmark" href="index.html" aria-label="Aayush home">AAYUSH</a>
+        <nav aria-label="Primary navigation"><a href="now.html">Now</a><a href="writing.html">Writing</a><a href="interests.html">Interests</a><a href="about.html">About</a></nav>
+    </header>
+    <main>
+        <section class="hero homepage-hero" aria-labelledby="intro-title">
+            <p class="eyebrow">A personal notebook</p>
+            <h1 id="intro-title">Systems, spaces,<br>sound, and small details.</h1>
+            <p class="hero-copy">Hi, I’m Aayush—a software engineer at Microsoft. I’m interested in AI, thoughtful products, and how things fit together. This is where I share what I build, learn, and notice.</p>
+            <a class="button button-primary" href="about.html">More about me <span aria-hidden="true">→</span></a>
+        </section>
+        <section class="section explore-section" aria-labelledby="explore-title">
+            <p class="eyebrow">Explore</p>
+            <h2 id="explore-title">Work, writing, and the things I return to.</h2>
+            <div class="explore-grid">
+                <a class="explore-card" href="writing.html"><p class="item-label">01 · Writing</p><h3>Notes and guides</h3><p>Technical learnings, practical guides, and ideas worth keeping.</p><span class="arrow" aria-hidden="true">→</span></a>
+                <a class="explore-card" href="now.html"><p class="item-label">02 · Now</p><h3>Current threads</h3><p>What I’m exploring, building, and practising at the moment.</p><span class="arrow" aria-hidden="true">→</span></a>
+                <a class="explore-card" href="interests.html"><p class="item-label">03 · Interests</p><h3>Beyond software</h3><p>Spaces, sound, watches, and small objects made with care.</p><span class="arrow" aria-hidden="true">→</span></a>
             </div>
-        </div>
-
-        <!-- Content Area -->
-        <div class="content-area" id="content-area">
-            <!-- Content will be loaded dynamically here -->
-            <div class="loading">Loading...</div>
-        </div>
-    </div>
-
-    <script src="js/main.js"></script>
+        </section>
+        <section class="section recent-section" aria-labelledby="recent-title">
+            <div class="section-heading-row"><div><p class="eyebrow">Recent</p><h2 id="recent-title">A few places to start.</h2></div><a class="text-link" href="writing.html">All writing <span aria-hidden="true">→</span></a></div>
+            <div class="recent-list">
+                <a class="recent-item" href="blog/interior-design/home-theatre-room-setup.html"><div><p class="item-label">Guide · Interior design</p><h3>Setting up your perfect home theatre room</h3></div><span>↗</span></a>
+                <a class="recent-item" href="https://www.linkedin.com/in/aayushkumarsingha/" target="_blank" rel="noreferrer"><div><p class="item-label">LinkedIn · Engineering</p><h3>Notes on agentic AI, reliable systems, and developer productivity</h3></div><span>↗</span></a>
+            </div>
+        </section>
+    </main>
+    <footer class="site-footer"><p>© <span id="year">2026</span> Aayush. Built for curious generalists.</p><a href="https://www.linkedin.com/in/aayushkumarsingha/" target="_blank" rel="noreferrer">LinkedIn ↗</a></footer>
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
