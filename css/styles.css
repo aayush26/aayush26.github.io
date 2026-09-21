@@ -48,6 +48,8 @@ time, .link-list span, .archive-list > li > span { color: var(--muted); font-siz
 .archive-list > li:first-child { border-top: 1px solid var(--line); }
 .archive-list p { color: var(--muted); font-size: .95rem; margin: .35rem 0 0; }
 .archive-list > li > span { align-self: start; padding-top: .25rem; }
+.paper-section + .paper-section { border-top: 1px solid var(--line); margin-top: 4rem; padding-top: 2.4rem; }
+.section-label > span { color: var(--muted); font-family: ui-monospace, monospace; font-size: .7rem; }
 .empty-shelf { border-left: 3px solid var(--accent); max-width: 560px; padding: .25rem 0 .25rem 1.3rem; }
 .empty-shelf h2 { font-size: 1.7rem; margin-bottom: .7rem; }
 .empty-shelf p:last-child { color: var(--muted); margin-bottom: 0; }
